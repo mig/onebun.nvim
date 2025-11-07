@@ -40,17 +40,21 @@ local function with_derived(colors, opts)
 	colors.bg_darker = opts.bg_darker or util.darken(colors.bg, 0.3)
 	colors.bg_highlight = opts.bg_highlight or util.lighten(colors.bg, 0.1)
 	colors.bg_float = opts.bg_float or util.lighten(colors.bg, 0.05)
-	colors.bg_visual = opts.bg_visual or util.blend(colors.blue, colors.bg, 0.2)
+	colors.bg_visual = opts.bg_visual or util.blend(colors.blue, colors.bg, 0.35)
 	colors.bg_statusline = opts.bg_statusline or util.blend(colors.bg, colors.bg_dark, 0.6)
 	colors.bg_sidebar = opts.bg_sidebar or colors.bg_dark
 
 	colors.border = opts.border or util.lighten(colors.bg, 0.12)
 	colors.border_shadow = opts.border_shadow or util.darken(colors.border, 0.4)
-	colors.selection = opts.selection or util.blend(colors.magenta, colors.bg, 0.18)
+	colors.selection = opts.selection or util.blend(colors.magenta, colors.bg, 0.4)
 	colors.selection_lighter = opts.selection_lighter or util.lighten(colors.selection, 0.2)
+	colors.selection_strong = opts.selection_strong or util.blend(colors.magenta, colors.selection, 0.65)
 
 	colors.comment = opts.comment or util.blend(colors.fg, colors.bg, 0.35)
 	colors.comment_strong = opts.comment_strong or util.blend(colors.fg, colors.bg, 0.5)
+	colors.gray = opts.gray or util.blend(colors.fg, colors.bg, 0.45)
+	colors.gray_dark = opts.gray_dark or util.blend(colors.fg, colors.bg, 0.25)
+	colors.gray_darker = opts.gray_darker or util.darken(colors.bg_dark, 0.2)
 
 	colors.git = vim.tbl_extend("force", {
 		add = colors.green,
