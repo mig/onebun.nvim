@@ -228,6 +228,20 @@ function M.setup(colors, opts)
 		MiniStarterCurrent = { fg = colors.yellow },
 		MiniStarterHeader = { fg = colors.green },
 		MiniStarterFooter = { fg = colors.comment },
+
+		-- JSX / TSX (legacy syntax groups)
+		jsxTag = { fg = colors.yellow },
+		jsxTagName = { fg = colors.yellow },
+		jsxComponentName = { fg = colors.yellow },
+		jsxAttrib = { fg = colors.teal },
+		jsxEqual = { fg = colors.magenta },
+		jsxBraces = { fg = colors.comment },
+		jsxSpread = { fg = colors.orange },
+		jsxCloseTag = { fg = colors.yellow },
+		jsxCloseString = { fg = colors.comment },
+		jsxOpenPunct = { fg = colors.comment },
+		jsxClosePunct = { fg = colors.comment },
+		jsxString = { link = "String" },
 	}
 
 	-- Treesitter capture groups
@@ -247,6 +261,10 @@ function M.setup(colors, opts)
 		["@string.regex"] = { fg = colors.yellow },
 		["@string.escape"] = { fg = colors.orange },
 		["@string.special"] = { fg = colors.yellow },
+		["@tag"] = { fg = colors.yellow },
+		["@tag.attribute"] = { fg = colors.teal },
+		["@tag.delimiter"] = { fg = colors.comment },
+		["@tag.builtin"] = { fg = colors.yellow, italic = true },
 		["@character"] = { link = "Character" },
 		["@number"] = { link = "Number" },
 		["@boolean"] = { link = "Boolean" },
